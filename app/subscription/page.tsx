@@ -1,8 +1,19 @@
-import React from 'react'
+// import { auth } from '@clerk/nextjs/server'
+// import { redirect } from 'next/navigation'
 
-const Subscription = () => {
+import { PricingTable } from "@clerk/nextjs"
+
+const Subscription = async () => {
+  // const { userId } = await auth()
+  
+  // if (!userId) {
+  //   redirect('/sign-in')
+  // }
+
   return (
-    <div>Subscription</div>
+    <div>
+      <PricingTable/>
+    </div>
   )
 }
 

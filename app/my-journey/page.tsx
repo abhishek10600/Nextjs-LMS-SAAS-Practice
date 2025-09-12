@@ -1,8 +1,18 @@
-import React from 'react'
+import { auth } from '@clerk/nextjs/server'
+import { redirect } from 'next/navigation'
 
-const Profile = () => {
+const Profile = async () => {
+  const { userId } = await auth()
+  
+  if (!userId) {
+    redirect('/sign-in')
+  }
+
   return (
-    <div>Profile</div>
+    <div>
+      <h1 className="text-2xl font-bold">My Journey</h1>
+      <p>Welcome to your learning journey!</p>
+    </div>
   )
 }
 
